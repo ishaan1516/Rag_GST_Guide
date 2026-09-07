@@ -1,0 +1,67 @@
+{
+  "rewrite.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Rewrite a user question into a search query using Indian GST statutory\nvocabulary - section numbers, form names, and CGST Act terminology - so it\nmatches the phrasing used in a legal reference text.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Search Query:",
+          "description": "${search_query}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "answer.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Answer strictly from the provided GST reference excerpts. Cite the\nchunk_id supporting each claim. If the excerpts do not contain the answer,\nset sufficient to False and say so rather than inferring.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Context:",
+          "description": "numbered excerpts with chapter and section"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "${answer}"
+        },
+        {
+          "prefix": "Citations:",
+          "description": "chunk_ids actually used"
+        },
+        {
+          "prefix": "Sufficient:",
+          "description": "whether the context answered the question"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.3.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}

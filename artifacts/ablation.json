@@ -1,0 +1,12 @@
+{
+  "vanilla": {
+    "recall@5": 0.7,
+    "mrr": 0.3333333333333333,
+    "correct": 0.0,
+    "grounded": 0.0,
+    "cite_ok": 0.0,
+    "abstain_acc": 0.8,
+    "temporal_qual": 0,
+    "p50_latency": 0.28033018112182617
+  }
+}

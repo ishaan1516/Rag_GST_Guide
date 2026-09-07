@@ -1,0 +1,72 @@
+[
+  {
+    "id": "factual",
+    "latency": 3.7225890159606934,
+    "recall@5": 1.0,
+    "mrr": 0.3333333333333333,
+    "ndcg@5": 0.5,
+    "cite_ok": 0.0,
+    "answerable": true,
+    "abstained": false,
+    "temporal_flag": false,
+    "temporal_qualified": false,
+    "correct": 0.0,
+    "grounded": 0.0
+  },
+  {
+    "id": "factual",
+    "latency": 0.060864925384521484,
+    "recall@5": 0.5,
+    "mrr": 0.5,
+    "ndcg@5": 0.38685280723454163,
+    "cite_ok": 0.0,
+    "answerable": true,
+    "abstained": false,
+    "temporal_flag": false,
+    "temporal_qualified": false,
+    "correct": null,
+    "grounded": null
+  },
+  {
+    "id": "identifier",
+    "latency": 0.01822805404663086,
+    "recall@5": 1.0,
+    "mrr": 0.5,
+    "ndcg@5": 0.6309297535714575,
+    "cite_ok": 0.0,
+    "answerable": true,
+    "abstained": false,
+    "temporal_flag": false,
+    "temporal_qualified": false,
+    "correct": 0.0,
+    "grounded": 0.0
+  },
+  {
+    "id": "temporal",
+    "latency": 0.01636505126953125,
+    "recall@5": 1.0,
+    "mrr": 0.3333333333333333,
+    "ndcg@5": 0.5,
+    "cite_ok": 0.0,
+    "answerable": true,
+    "abstained": false,
+    "temporal_flag": false,
+    "temporal_qualified": false,
+    "correct": 0.0,
+    "grounded": 0.0
+  },
+  {
+    "id": "unanswerable",
+    "latency": 0.020627975463867188,
+    "recall@5": 0.0,
+    "mrr": 0.0,
+    "ndcg@5": 0.0,
+    "cite_ok": 0.0,
+    "answerable": false,
+    "abstained": false,
+    "temporal_flag": false,
+    "temporal_qualified": false,
+    "correct": null,
+    "grounded": null
+  }
+]

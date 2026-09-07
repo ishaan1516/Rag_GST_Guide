@@ -1,0 +1,383 @@
+{
+  "units": 70,
+  "chunks": 3447,
+  "tokens_total": 1017405,
+  "prose_chunks": 3320,
+  "table_chunks": 127,
+  "chunks_with_identifiers": 1883,
+  "chunks_with_dates": 1630,
+  "header_footer_strings_filtered": 155,
+  "per_chapter": {
+    "1": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "2": {
+      "toc_entries": 0,
+      "sections_found": 3,
+      "style": 0,
+      "toc": 0,
+      "regex": 2
+    },
+    "3": {
+      "toc_entries": 0,
+      "sections_found": 18,
+      "style": 0,
+      "toc": 0,
+      "regex": 18
+    },
+    "4": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "5": {
+      "toc_entries": 0,
+      "sections_found": 23,
+      "style": 0,
+      "toc": 0,
+      "regex": 23
+    },
+    "6": {
+      "toc_entries": 0,
+      "sections_found": 3,
+      "style": 0,
+      "toc": 0,
+      "regex": 2
+    },
+    "7": {
+      "toc_entries": 0,
+      "sections_found": 7,
+      "style": 0,
+      "toc": 0,
+      "regex": 6
+    },
+    "8": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "9": {
+      "toc_entries": 0,
+      "sections_found": 6,
+      "style": 0,
+      "toc": 0,
+      "regex": 5
+    },
+    "10": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "11": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "12": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "13": {
+      "toc_entries": 0,
+      "sections_found": 12,
+      "style": 0,
+      "toc": 0,
+      "regex": 11
+    },
+    "14": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 1
+    },
+    "15": {
+      "toc_entries": 0,
+      "sections_found": 2,
+      "style": 0,
+      "toc": 0,
+      "regex": 1
+    },
+    "16": {
+      "toc_entries": 0,
+      "sections_found": 1,
+      "style": 0,
+      "toc": 0,
+      "regex": 0
+    },
+    "17": {
+      "toc_entries": 21,
+      "sections_found": 21,
+      "style": 21,
+      "toc": 0,
+      "regex": 0
+    },
+    "18": {
+      "toc_entries": 11,
+      "sections_found": 11,
+      "style": 11,
+      "toc": 0,
+      "regex": 0
+    },
+    "19": {
+      "toc_entries": 21,
+      "sections_found": 35,
+      "style": 21,
+      "toc": 0,
+      "regex": 16
+    },
+    "20": {
+      "toc_entries": 51,
+      "sections_found": 51,
+      "style": 51,
+      "toc": 0,
+      "regex": 0
+    },
+    "21": {
+      "toc_entries": 48,
+      "sections_found": 47,
+      "style": 0,
+      "toc": 0,
+      "regex": 55
+    },
+    "22": {
+      "toc_entries": 41,
+      "sections_found": 40,
+      "style": 0,
+      "toc": 0,
+      "regex": 41
+    },
+    "23": {
+      "toc_entries": 30,
+      "sections_found": 44,
+      "style": 0,
+      "toc": 0,
+      "regex": 46
+    },
+    "24": {
+      "toc_entries": 23,
+      "sections_found": 23,
+      "style": 0,
+      "toc": 0,
+      "regex": 23
+    },
+    "25": {
+      "toc_entries": 17,
+      "sections_found": 21,
+      "style": 0,
+      "toc": 0,
+      "regex": 20
+    },
+    "26": {
+      "toc_entries": 29,
+      "sections_found": 36,
+      "style": 0,
+      "toc": 0,
+      "regex": 38
+    },
+    "27": {
+      "toc_entries": 0,
+      "sections_found": 7,
+      "style": 0,
+      "toc": 0,
+      "regex": 14
+    },
+    "28": {
+      "toc_entries": 20,
+      "sections_found": 38,
+      "style": 0,
+      "toc": 1,
+      "regex": 51
+    },
+    "29": {
+      "toc_entries": 15,
+      "sections_found": 19,
+      "style": 0,
+      "toc": 0,
+      "regex": 27
+    },
+    "30": {
+      "toc_entries": 0,
+      "sections_found": 9,
+      "style": 0,
+      "toc": 0,
+      "regex": 16
+    },
+    "31": {
+      "toc_entries": 0,
+      "sections_found": 42,
+      "style": 0,
+      "toc": 0,
+      "regex": 84
+    },
+    "32": {
+      "toc_entries": 56,
+      "sections_found": 55,
+      "style": 0,
+      "toc": 0,
+      "regex": 59
+    },
+    "33": {
+      "toc_entries": 38,
+      "sections_found": 41,
+      "style": 0,
+      "toc": 0,
+      "regex": 42
+    },
+    "34": {
+      "toc_entries": 0,
+      "sections_found": 12,
+      "style": 0,
+      "toc": 0,
+      "regex": 25
+    },
+    "35": {
+      "toc_entries": 0,
+      "sections_found": 13,
+      "style": 0,
+      "toc": 0,
+      "regex": 26
+    },
+    "36": {
+      "toc_entries": 9,
+      "sections_found": 9,
+      "style": 0,
+      "toc": 0,
+      "regex": 9
+    },
+    "37": {
+      "toc_entries": 12,
+      "sections_found": 12,
+      "style": 0,
+      "toc": 0,
+      "regex": 12
+    },
+    "38": {
+      "toc_entries": 16,
+      "sections_found": 18,
+      "style": 0,
+      "toc": 0,
+      "regex": 22
+    },
+    "39": {
+      "toc_entries": 0,
+      "sections_found": 10,
+      "style": 0,
+      "toc": 0,
+      "regex": 19
+    },
+    "40": {
+      "toc_entries": 0,
+      "sections_found": 11,
+      "style": 0,
+      "toc": 0,
+      "regex": 20
+    },
+    "41": {
+      "toc_entries": 0,
+      "sections_found": 9,
+      "style": 0,
+      "toc": 0,
+      "regex": 21
+    },
+    "42": {
+      "toc_entries": 0,
+      "sections_found": 4,
+      "style": 0,
+      "toc": 0,
+      "regex": 8
+    },
+    "43": {
+      "toc_entries": 0,
+      "sections_found": 8,
+      "style": 0,
+      "toc": 0,
+      "regex": 14
+    },
+    "44": {
+      "toc_entries": 11,
+      "sections_found": 11,
+      "style": 0,
+      "toc": 0,
+      "regex": 11
+    },
+    "45": {
+      "toc_entries": 0,
+      "sections_found": 6,
+      "style": 0,
+      "toc": 0,
+      "regex": 12
+    },
+    "46": {
+      "toc_entries": 16,
+      "sections_found": 15,
+      "style": 0,
+      "toc": 0,
+      "regex": 15
+    },
+    "47": {
+      "toc_entries": 0,
+      "sections_found": 6,
+      "style": 0,
+      "toc": 0,
+      "regex": 12
+    },
+    "48": {
+      "toc_entries": 0,
+      "sections_found": 12,
+      "style": 0,
+      "toc": 0,
+      "regex": 24
+    },
+    "49": {
+      "toc_entries": 28,
+      "sections_found": 27,
+      "style": 0,
+      "toc": 0,
+      "regex": 27
+    },
+    "50": {
+      "toc_entries": 15,
+      "sections_found": 20,
+      "style": 0,
+      "toc": 0,
+      "regex": 21
+    },
+    "51": {
+      "toc_entries": 0,
+      "sections_found": 6,
+      "style": 0,
+      "toc": 0,
+      "regex": 12
+    },
+    "52": {
+      "toc_entries": 19,
+      "sections_found": 19,
+      "style": 0,
+      "toc": 0,
+      "regex": 19
+    },
+    "54": {
+      "toc_entries": 10,
+      "sections_found": 10,
+      "style": 0,
+      "toc": 0,
+      "regex": 10
+    }
+  }
+}

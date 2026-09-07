@@ -1,0 +1,26 @@
+# Stage 1 - works with no API key
+# Pinned versions verified against Python 3.12.
+python-docx==1.2.0
+faiss-cpu==1.9.0
+rank-bm25==0.2.2
+numpy==1.26.4
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.6
+
+# Stage 2 - real search quality
+sentence-transformers==3.3.1
+
+# Stage 3 - real answers, via OpenRouter (free-tier models, no OpenAI account)
+dspy==3.3.1
+# No separate "openrouter" package - DSPy talks to OpenRouter through
+# litellm's built-in openrouter/ provider prefix (already wired in
+# src/dspy_program.py and src/metrics.py via the LLM_PROVIDER=openrouter
+# switch). litellm pulls in the "openai" package on its own as an internal
+# dependency - that's just SDK code it reuses to talk to ANY
+# OpenAI-compatible endpoint. It installs automatically, needs no OpenAI
+# account or key, and this project never imports it directly.
+
+# Stage 5 - optimisation & evaluation
+ragas==0.2.14
+mlflow==2.20.3

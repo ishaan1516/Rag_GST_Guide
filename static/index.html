@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GST Answers</title>
+    <style>
+        :root {
+            --paper: #FBFAF7;
+            --rule: #DCD8CE;
+            --ink: #1C1A16;
+            --muted: #6E6858;
+            --mark: #7A5C1E;
+            --alert: #8C3A1E;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 16px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+            padding: 44px 20px 100px;
+        }
+
+        main {
+            max-width: 660px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 27px;
+            margin: 0 0 4px;
+            font-weight: normal;
+            letter-spacing: .01em;
+        }
+
+        .lede {
+            color: var(--muted);
+            margin: 0 0 32px;
+            font-size: 15px;
+            max-width: 50ch;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 10px;
+        }
+
+        input {
+            flex: 1;
+            font: inherit;
+            border: none;
+            background: transparent;
+            padding: 6px 0;
+            color: var(--ink);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #A9A294;
+        }
+
+        button {
+            font: 15px/1 Georgia, serif;
+            border: none;
+            background: var(--ink);
+            color: var(--paper);
+            padding: 10px 18px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        button:disabled {
+            opacity: .4;
+            cursor: default;
+        }
+
+        button:focus-visible {
+            outline: 2px solid var(--mark);
+            outline-offset: 2px;
+        }
+
+        .examples {
+            margin: 14px 0 0;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .examples span {
+            cursor: pointer;
+            border-bottom: 1px dotted var(--muted);
+            margin-right: 16px;
+        }
+
+        .examples span:hover {
+            color: var(--ink);
+            border-color: var(--ink);
+        }
+
+        #out {
+            margin-top: 40px;
+        }
+
+        .answer {
+            font-size: 17px;
+            white-space: pre-wrap;
+        }
+
+        .answer .cite {
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 12px;
+            color: var(--mark);
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 11px;
+            color: var(--muted);
+            border: 1px solid var(--rule);
+            padding: 2px 7px;
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+
+        .warn {
+            border-left: 3px solid var(--alert);
+            background: #FCF5F2;
+            padding: 12px 16px;
+            margin: 22px 0;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: normal;
+            color: var(--muted);
+            margin: 38px 0 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .src {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .src:last-child {
+            border-bottom: none;
+        }
+
+        .src .where {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .src .id {
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .src .dates {
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 11px;
+            color: var(--mark);
+            margin-left: 8px;
+        }
+
+        .src .prev {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .status {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .err {
+            color: var(--alert);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>GST Answers</h1>
+        <p class="lede">Ask a question about Indian GST. Every answer comes from the
+            1,300-page reference guide, with the chapter and section it came from.</p>
+
+        <form id="f">
+            <input id="q" placeholder="Which form withdraws you from the composition scheme?" autocomplete="off">
+            <button id="btn">Ask</button>
+        </form>
+
+        <p class="examples">
+            <span>Who is liable to register under GST?</span>
+            <span>What is the composition scheme turnover limit?</span>
+            <span>When is input tax credit not available?</span>
+        </p>
+
+        <div id="out"></div>
+    </main>
+
+    <script>
+        const $ = id => document.getElementById(id);
+
+        document.querySelectorAll(".examples span").forEach(s => {
+            s.onclick = () => { $("q").value = s.textContent; $("f").requestSubmit(); };
+        });
+
+        $("f").onsubmit = async e => {
+            e.preventDefault();
+            const question = $("q").value.trim();
+            if (question.length < 5) return;
+
+            $("btn").disabled = true;
+            $("out").innerHTML = '<p class="status">Searching the guide…</p>';
+
+            try {
+                const res = await fetch("/api/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ question })
+                });
+                const d = await res.json();
+                if (!res.ok) throw new Error(d.detail || "Something went wrong.");
+                render(d);
+            } catch (err) {
+                $("out").innerHTML = `<p class="err">${err.message}</p>`;
+            }
+            $("btn").disabled = false;
+        };
+
+        function render(d) {
+            const cited = d.answer.replace(/\[([a-z0-9_]+)\]/g,
+                '<span class="cite">[$1]</span>');
+
+            const warn = d.temporal_flag ? `
+    <div class="warn">The guide contains more than one version of this rule, from
+    different dates. Check the effective dates in the sources below before relying
+    on this.</div>` : "";
+
+            const sources = d.sources.map(s => `
+    <div class="src">
+      <div class="where">${s.chapter}${s.section ? " › " + s.section : ""}
+        <span class="id">${s.chunk_id}</span>
+        ${s.dates.length ? `<span class="dates">${s.dates.join(" · ")}</span>` : ""}
+      </div>
+      <p class="prev">${s.preview}…</p>
+    </div>`).join("");
+
+            $("out").innerHTML = `
+    ${d.demo ? '<span class="badge">demo mode — no AI key</span><br>' : ""}
+    ${warn}
+    <div class="answer">${cited}</div>
+    <h2>Where this came from</h2>
+    ${sources}`;
+        }
+    </script>
+</body>
+
+</html>

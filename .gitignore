@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+artifacts/faiss.index
+artifacts/bm25.pkl
+data/manual.docx
+mlruns/
+.dspy_cache/
